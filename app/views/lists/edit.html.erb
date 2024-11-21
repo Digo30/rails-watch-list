@@ -1,0 +1,9 @@
+<h1> Edit list </h1>
+
+<%= simple_form_for (@list) do |f| %>
+  <%= f.input :name, required: true, placeholder: "Enter the list name" %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<% end %>
