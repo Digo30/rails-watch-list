@@ -1,1 +1,83 @@
-// Specific CSS for your home-page
+.banner {
+  background-image: url('https://campinas.com.br/wp-content/uploads/2023/09/pipoca-no-cinema-com-almofada-no-chao-scaled-e1695841582534-768x461.jpg'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  width: 100%; /* Garante que o banner ocupe toda a largura */
+  height: 400px; /* Altura da tela inteira */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Necessário para o overlay funcionar corretamente */
+
+  /* Overlay escuro com opacidade */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo preto com 50% de opacidade */
+    z-index: 1; /* Coloca o overlay por cima da imagem */
+  }
+
+  .banner-content {
+    position: relative; /* Para garantir que o texto fique acima do overlay */
+    z-index: 2; /* Coloca o conteúdo de texto acima do overlay */
+    max-width: 90%;
+    padding: 20px;
+    color: #fff; /* Cor do texto */
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: lighter;
+  }
+}
+
+.bookmarks-container {
+  margin-top: 20px;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar para a próxima linha se necessário */
+  gap: 20px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza os elementos na página */
+}
+
+.movie-card {
+  background: #f8f9fa; /* Cor de fundo do card */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden; /* Para manter bordas arredondadas */
+  width: 200px; /* Largura fixa de cada card */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o card */
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+  }
+}
+
+.movie-poster-image {
+  width: 100%; /* Imagem ocupa a largura do card */
+  height: 300px; /* Altura fixa para consistência */
+  object-fit: cover; /* Ajusta a imagem para caber sem distorcer */
+}
+
+.movie-details {
+  padding: 10px;
+}
+
+.btn {
+  margin: 10px 0; /* Espaçamento ao redor do botão */
+}

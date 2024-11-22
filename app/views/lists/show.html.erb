@@ -1,17 +1,21 @@
-<h2> <%= @list.name %> </h2>
+<h2><%= @list.name %></h2>
 <div class="bookmarks-container">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="bookmark">
-      <div class="movie">
-        <p><strong>Filme:</strong> <%= bookmark.movie.title %></p>
+  <div class="movies-grid">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <%= image_tag(bookmark.movie.poster_url, alt: "#{bookmark.movie.title} Poster", class: "movie-poster-image") if bookmark.movie.poster_url.present? %>
+        </div>
+        <div class="movie-details">
+          <p><strong>Filme:</strong> <%= bookmark.movie.title %></p>
+          <p><strong>Comentários:</strong> <%= bookmark.comment %></p>
+        </div>
+        <%= link_to "Delete", list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
       </div>
-      <div class="comment">
-        <p><strong>Comentários:</strong> <%= bookmark.comment %></p>
-      </div>
-    </div>
-    <%= link_to "Delete", list_bookmark_path(@list, bookmark), data: { turbo_method: :delete, turbo_confirm: 'are you sure?'}, class: "btn btn-outline-danger"%>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
 
 
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-secondary"%>

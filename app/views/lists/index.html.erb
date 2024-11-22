@@ -1,10 +1,24 @@
-<h1>Movies List</h1>
 
+<!-- Banner Section --><div class="banner">
+  <div class="banner-content">
+    <h1 class="display-3 text-center text-white">Welcome to Movie Hub</h1>
+    <p class="lead text-center text-white">Create, explore and share your movies lists with your friends.</p>
+  </div>
+</div>
 
-<%= link_to "New List", new_list_path, class: "btn btn-outline-secondary"%>
+<!-- Button to create new list -->
+<div class="text-center mb-4">
+  <%= link_to "New List", new_list_path, class: "btn btn-outline-secondary" %>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<!-- Display the existing lists -->
+<div class="mb-5">
+  <h2>Your Lists</h2>
+  <ul class="list-group">
+    <% @lists.each do |list| %>
+      <li class="list-group-item">
+        <%= link_to list.name, list_path(list), class: "text-decoration-none" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
