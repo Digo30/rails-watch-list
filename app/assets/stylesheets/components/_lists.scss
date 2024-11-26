@@ -1,0 +1,19 @@
+@import "../base/variables";
+
+ul.list-group {
+  padding: 0;
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    padding: 10px 15px;
+    background-color: #222;
+    border: none;
+    border-bottom: 1px solid #444;
+
+    a {
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+}

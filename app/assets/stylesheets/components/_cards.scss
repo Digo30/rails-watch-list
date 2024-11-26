@@ -1,0 +1,43 @@
+@import "../base/variables";
+
+.card {
+  background-color: $card-bg-color;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  all:unset;
+  padding: 15px;
+  text-align: center;
+  color: black !important;
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 10px;
+  }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: black !important;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.movie-detais {
+  color: $card-text-color;
+}

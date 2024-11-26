@@ -10,7 +10,7 @@
           <p><strong>Filme:</strong> <%= bookmark.movie.title %></p>
           <p><strong>Comentários:</strong> <%= bookmark.comment %></p>
         </div>
-        <%= link_to "Delete", list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+        <%= link_to "Delete", list_bookmark_path(@list, bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"}, class: "btn btn-outline-danger" %>
       </div>
     <% end %>
   </div>

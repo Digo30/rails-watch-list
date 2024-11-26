@@ -3,13 +3,12 @@
   <div class="banner-content">
     <h1 class="display-3 text-center text-white">Welcome to Movie Hub</h1>
     <p class="lead text-center text-white">Create, explore and share your movies lists with your friends.</p>
+    <div class="text-center mb-4">
+  <%= link_to "New List", new_list_path, class: "btn btn-outline-secondary" %>
+</div>
   </div>
 </div>
 
-<!-- Button to create new list -->
-<div class="text-center mb-4">
-  <%= link_to "New List", new_list_path, class: "btn btn-outline-secondary" %>
-</div>
 
 <!-- Display the existing lists -->
 <div class="mb-5">
